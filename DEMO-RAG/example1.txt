@@ -1,0 +1,10 @@
+. La Gran Pregunta de la Demo (en el "Test" de la KB):
+3.1 Configuración de Parámetros (en el "Test" de la KB):
+
+Temperature: 0.0
+
+Maximum output tokens: 2048
+
+3.2 User Prompt (Copia y pega en el campo de chat del "Test" de la KB):
+
+Soy un nuevo desarrollador. Necesito saber qué tecnologías usa el microservicio de pagos, cuál es la política para solicitar vacaciones este año, y qué comando debo usar para desplegar una función Lambda a producción.

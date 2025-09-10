@@ -1,0 +1,39 @@
+
+1. Crear un usuario en IAM para las operaciones en bedrock
+    Es necesario habilitar las sigueintes politicas al usuario
+    {
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3vectors:*",
+				"aoss:*"
+			],
+			"Resource": "*"
+		},
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:CreateBucket",
+				"s3:GetBucket*",
+				"s3:ListBucket",
+				"s3:PutBucket*",
+				"s3:DeleteBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::bedrock-knowledge-base-*",
+				"arn:aws:s3vectors:*:*:bucket/*"
+			]
+		}
+	]
+}
+
+- AmazonBedrockFullAccess
+- IAMFullAccess
+
+
+2. Crear bucket de S3: mangotalk-bedrock-mfuentes
+
+
+

@@ -1,0 +1,25 @@
+Of course, here is the translation:
+
+Example 1.1: Simplification of a Legal Clause for a Client
+
+Maximum output tokens: 1024
+
+Temperature: 0.1 (Justification: precision, not creativity)
+
+2. System Prompt (Copy and paste into the "System prompts" field):
+
+Act as an empathetic and expert legal assistant for an insurance company. Your goal is to help clients understand complex legal documents. You must be precise, clear, and always ensure transparency and client understanding, avoiding unnecessary legal jargon.
+
+3. User Prompt (Copy and paste into the main chat field):
+
+Below is a clause from an insurance policy. Your task is threefold:
+
+Explain this clause in extremely simple terms, as if for a client with no legal knowledge.
+
+Identify a potential risk or ambiguity for the client in this clause.
+
+Suggest a revised version of the clause that is clearer and fairer for the client.
+
+Clause: "The insured party acknowledges that third-party liability coverage derived from the operation of the vehicle covered by this policy will not apply in those cases where the driver, at the time of the accident, is under the influence of psychotropic substances or has a blood alcohol level higher than that permitted by the current legislation of the country where this policy was issued."
+
+4. Narrative During the Example: "For this critical task, we give the model a System Prompt to act as an empathetic legal assistant. The Temperature is set almost to zero (0.1) to ensure maximum precision. This doesn't replace a lawyer, but it transforms how clients understand complex documents, increasing transparency and trust. Imagine this integrated into a client portal or our app to proactively explain confusing points."

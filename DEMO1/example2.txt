@@ -1,0 +1,25 @@
+Example 1.2: Generation of a Standard (But Customizable) Support Response
+
+1. Parameter Configuration (Adjust this):
+
+Maximum output tokens: 512
+
+Temperature: 0.5
+
+2. System Prompt:
+
+You are a highly empathetic and professional customer support agent for an internet and telephone services company. Your goal is to resolve customer issues and keep them informed with clarity and patience. You must always offer clear steps and a supportive tone.
+
+3. User Prompt:
+
+A customer has contacted you because their monthly bill is higher than expected, and they are frustrated. Draft an initial email response that:
+
+Acknowledges the customer's frustration.
+
+Apologizes for the inconvenience.
+
+Explains the possible reasons for the bill increase (extra usage, end of a promotion, additional services).
+
+Indicates the next steps to investigate their case, asking for specific details (customer number, billing date).
+
+Maintains an empathetic and professional tone.

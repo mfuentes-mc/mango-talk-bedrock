@@ -1,0 +1,32 @@
+
+Título del Documento: Guía de Arquitectura y Onboarding - Microservicio de Pagos v2.3
+Versión: 2.3.1
+Fecha de Última Actualización: 9 de septiembre de 2025
+Autor: Equipo de Arquitectura de Pagos
+
+---
+
+Sección 1: Resumen de Arquitectura
+El microservicio de Pagos es un componente crítico del sistema. Su función es procesar todas las transacciones con tarjeta de crédito y débito.
+
+- Lenguaje: Java 17
+- Framework: Spring Boot 3.1
+- Base de Datos: PostgreSQL 14 (Instancia de AWS RDS)
+- Comunicación Asíncrona: Apache Kafka para notificar eventos de pago.
+
+---
+
+Sección 2: Proceso de Despliegue a Producción
+El proceso de despliegue es gestionado a través de nuestro pipeline de CI/CD en Jenkins y requiere varias validaciones para garantizar la estabilidad.
+
+- Paso 1: Crear un ticket de despliegue en Jira con la descripción de los cambios.
+- Paso 2: El Pull Request en Bitbucket debe ser aprobado por al menos dos (2) desarrolladores senior.
+- Paso 3: Una vez aprobado, el pipeline de Jenkins se ejecuta automáticamente, desplegando primero al ambiente de Staging.
+- Paso 4: El equipo de QA debe certificar el cambio en Staging antes de aprobar el pase a Producción.
+
+---
+
+Sección 3: Reglas de Negocio Clave
+- 3.1 Límite de Transacciones: Las transacciones individuales no pueden exceder los $5,000 USD.
+- 3.2 Validación de Riesgo Adicional: Cualquier transacción **superior a $1,000 USD** debe pasar por una validación de riesgo asíncrona antes de ser confirmada. El sistema debe esperar una respuesta del servicio de Fraude antes de aprobar el pago.
+- 3.3 Monedas Aceptadas: Actualmente, el servicio solo procesa pagos en Dólares Estadounidenses (USD) y Quetzales (GTQ).

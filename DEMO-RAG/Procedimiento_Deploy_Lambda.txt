@@ -1,0 +1,27 @@
+
+Título del Documento: Procedimiento Estándar de Despliegue de Funciones Lambda
+Versión: DEV-LAMBDA-1.0
+Fecha de Última Actualización: 1 de marzo de 2024
+Autor: Equipo de DevOps
+
+---
+
+Sección 1: Herramientas Necesarias
+- AWS CLI (versión 2.x)
+- Serverless Framework (versión 3.x)
+- Docker Desktop (para emulación local)
+
+---
+
+Sección 2: Pasos para el Despliegue
+- 2.1 Empaquetado: Ejecutar `npm run deploy-package` en el directorio raíz del proyecto Lambda para crear el .zip.
+- 2.2 Testing Local: Utilizar `serverless invoke local` para probar la función antes de subirla.
+- 2.3 Despliegue a DEV: Subir el paquete a AWS S3 y ejecutar `serverless deploy --stage dev --region us-east-1`
+- 2.4 Despliegue a PROD: Tras la aprobación de QA en DEV, ejecutar `serverless deploy --stage prod --region us-east-1 --aws-profile prod-admin`
+- Nota: Siempre revisar los logs en CloudWatch tras un despliegue.
+
+---
+
+Sección 3: Solución de Problemas Comunes
+- Error: "Role arn not found": Verificar permisos de IAM de la función Lambda.
+- Error: "Lambda timeout": Aumentar el valor de `timeout` en la configuración de la función.
